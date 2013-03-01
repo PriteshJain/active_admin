@@ -20,7 +20,7 @@ module ActiveAdmin
           root_and_dashboard_routes = Proc.new do
             root :to => (namespace.root_to || "dashboard#index")
             if ActiveAdmin::Dashboards.built?
-              match '/dashboard' => 'dashboard#index', :as => 'dashboard'
+              match '/dashboard' => 'dashboard#index', :as => 'dashboard' ,:via => [:get]
             end
           end
 
